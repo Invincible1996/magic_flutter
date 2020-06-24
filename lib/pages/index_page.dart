@@ -5,7 +5,6 @@
 */
 
 import 'package:flutter/material.dart';
-import 'package:fluttericon/entypo_icons.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
 import 'package:magic_flutter/pages/home_page.dart';
 import 'package:magic_flutter/pages/mine_page.dart';
@@ -37,6 +36,7 @@ class _IndexPageState extends State<IndexPage> {
         child: PageView.builder(
           controller: _controller,
           itemCount: _pageList.length,
+          physics: new NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) => _pageList[index],
         ),
       ),

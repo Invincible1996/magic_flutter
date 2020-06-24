@@ -31,6 +31,8 @@ dependencies:
   flutter_plugin_pdf_viewer: ^1.0.7
   google_fonts: ^1.1.0
   fluttericon: ^1.0.7
+  provider: ^4.1.3
+  oktoast: ^2.3.2
 
 dev_dependencies:
   flutter_test:

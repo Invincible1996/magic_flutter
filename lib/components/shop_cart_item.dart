@@ -20,11 +20,23 @@ class ShopCartItem extends StatefulWidget {
 
 class _ShopCartItemState extends State<ShopCartItem> {
   bool _isSelect = false;
+  CartModel cartModel;
 
   @override
   initState() {
     super.initState();
     _isSelect = widget.cartItem.isSelect;
+//    cartModel = widget.cartItem;
+  }
+
+  @override
+  void didUpdateWidget(ShopCartItem oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    debugPrint('35---${widget.cartItem.title}-----${widget.cartItem.isSelect}');
+    setState(() {
+      cartModel = widget.cartItem;
+      _isSelect = widget.cartItem.isSelect;
+    });
   }
 
   @override
@@ -39,12 +51,9 @@ class _ShopCartItemState extends State<ShopCartItem> {
       child: Row(
         children: <Widget>[
           Checkbox(
-              value: _isSelect,
+              value: widget.cartItem.isSelect,
               onChanged: (value) {
                 widget.onItemSelect(value, widget.cartItem);
-                setState(() {
-                  _isSelect = value;
-                });
               }),
           Text('${widget.cartItem.title}'),
         ],

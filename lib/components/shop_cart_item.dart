@@ -19,23 +19,18 @@ class ShopCartItem extends StatefulWidget {
 }
 
 class _ShopCartItemState extends State<ShopCartItem> {
-  bool _isSelect = false;
   CartModel cartModel;
 
   @override
   initState() {
     super.initState();
-    _isSelect = widget.cartItem.isSelect;
-//    cartModel = widget.cartItem;
   }
 
   @override
   void didUpdateWidget(ShopCartItem oldWidget) {
     super.didUpdateWidget(oldWidget);
-    debugPrint('35---${widget.cartItem.title}-----${widget.cartItem.isSelect}');
     setState(() {
       cartModel = widget.cartItem;
-      _isSelect = widget.cartItem.isSelect;
     });
   }
 
@@ -55,7 +50,18 @@ class _ShopCartItemState extends State<ShopCartItem> {
               onChanged: (value) {
                 widget.onItemSelect(value, widget.cartItem);
               }),
-          Text('${widget.cartItem.title}'),
+          Image.network(
+            'https://img.moegirl.org/common/f/f7/%E7%A0%B4%E7%81%AD%E5%88%80%E9%94%8B%E9%93%A0.jpg',
+            width: 120,
+            height: 120,
+          ),
+          SizedBox(width: 8,),
+          Expanded(
+              flex: 1,
+              child: Text(
+                '${widget.cartItem.title}',
+                overflow: TextOverflow.clip,
+              )),
         ],
       ),
     );

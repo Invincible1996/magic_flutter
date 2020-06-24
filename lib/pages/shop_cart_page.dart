@@ -8,6 +8,7 @@ import 'package:flutter/widgets.dart';
 import 'package:magic_flutter/components/shop_cart_item.dart';
 import 'package:magic_flutter/model/cart_model.dart';
 import 'package:magic_flutter/provider/shop_cart_provider.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:provider/provider.dart';
 
 class ShopCartPage extends StatefulWidget {
@@ -45,7 +46,7 @@ class _ShopCartPageState extends State<ShopCartPage> {
               itemCount: model.cartList.length,
               itemBuilder: (context, index) => ShopCartItem(
                   onItemSelect: (checked, value) =>
-                      model.onItemSelect(checked,index, value),
+                      model.onItemSelect(checked, index, value),
                   cartItem: model.cartList[index])),
         ),
         bottomNavigationBar: BottomAppBar(
@@ -72,7 +73,9 @@ class _ShopCartPageState extends State<ShopCartPage> {
                 Expanded(child: Text('总计：¥1230.00')),
                 RaisedButton(
                   shape: StadiumBorder(),
-                  onPressed: () {},
+                  onPressed: () {
+                    showToast('submit');
+                  },
                   child: Text(
                     '立即下单',
                     style: TextStyle(

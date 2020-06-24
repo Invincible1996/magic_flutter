@@ -104,6 +104,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.7"
+  flutter_spinkit:
+    dependency: "direct main"
+    description:
+      name: flutter_spinkit
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "4.1.2+1"
   flutter_svg:
     dependency: transitive
     description:
@@ -326,6 +333,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.21.0"
+  simple_tooltip:
+    dependency: "direct main"
+    description:
+      name: simple_tooltip
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.10"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -415,6 +429,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.8"
+  webview_flutter:
+    dependency: "direct main"
+    description:
+      name: webview_flutter
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.3.22+1"
   xdg_directories:
     dependency: transitive
     description:

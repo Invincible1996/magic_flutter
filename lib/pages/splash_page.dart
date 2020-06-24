@@ -22,7 +22,7 @@ class _SplashPageState extends State<SplashPage> {
   initState() {
     super.initState();
     requestPermission();
-    Future.delayed(Duration(milliseconds: 1500), () {
+    Future.delayed(Duration(milliseconds: 200), () {
       RouteUtil.replace(context, page: IndexPage());
     });
   }

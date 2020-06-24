@@ -12,6 +12,7 @@ class ShopCartProvider extends ChangeNotifier {
   List<CartModel> selectCartList = [];
 
   initCartList() {
+    selectCartList.clear();
     cartList = [
       CartModel(title: '长城，让我忘记自己孤身一人', isSelect: false),
       CartModel(title: '比任何对手都强，乃人生最大的烦恼', isSelect: false),

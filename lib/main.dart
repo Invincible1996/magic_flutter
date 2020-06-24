@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return OKToast(
         textStyle: TextStyle(fontSize: 19.0, color: Colors.white),
-        backgroundColor: Colors.grey,
-        radius: 10.0,
+        backgroundColor: Colors.black,
+        radius: 20.0,
         animationCurve: Curves.easeIn,
         animationBuilder: Miui10AnimBuilder(),
         animationDuration: Duration(milliseconds: 200),

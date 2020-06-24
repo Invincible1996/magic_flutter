@@ -7,8 +7,29 @@
 import 'package:flutter/material.dart';
 import 'package:magic_flutter/components/list_item.dart';
 import 'package:magic_flutter/pages/download_pdf_page.dart';
+import 'package:magic_flutter/pages/pdf_view_page.dart';
+import 'package:magic_flutter/pages/provider_page.dart';
 import 'package:magic_flutter/pages/shop_cart_page.dart';
+import 'package:magic_flutter/pages/stepper_page.dart';
+import 'package:magic_flutter/pages/tab_bar_page.dart';
+import 'package:magic_flutter/pages/webview_flutter_page.dart';
 import 'package:magic_flutter/util/route_util.dart';
+
+import 'animated/animated_list_page.dart';
+import 'call_native_page.dart';
+import 'container_page.dart';
+import 'custom_drop_down_menu_page.dart';
+import 'custom_paint_page.dart';
+import 'custom_regex_page.dart';
+import 'custom_tips_page.dart';
+import 'exception_page.dart';
+import 'extension_method_page.dart';
+import 'future_builder_page.dart';
+import 'gesture_detector_page.dart';
+import 'list_view_page.dart';
+import 'login_ui_page.dart';
+import 'multiple_choice_page.dart';
+import 'multiple_text_field_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -37,6 +58,100 @@ class _HomePageState extends State<HomePage> {
             ListItem(
               title: 'ShopCartPage',
               onPress: () => RouteUtil.push(context, page: ShopCartPage()),
+            ),
+            ListItem(
+              title: 'Exception',
+              onPress: () => RouteUtil.push(context, page: ExceptionPage()),
+            ),
+            ListItem(
+              title: 'FutureBuilder',
+              onPress: () => RouteUtil.push(context, page: FutureBuilderPage()),
+            ),
+            ListItem(
+              title: 'StepperPage',
+              onPress: () => RouteUtil.push(context, page: StepperPage()),
+            ),
+            ListItem(
+              title: 'WebView',
+              onPress: () =>
+                  RouteUtil.push(context, page: WebviewFlutterPage()),
+            ),
+            ListItem(
+              title: 'AnimatedPage',
+              onPress: () => RouteUtil.push(context, page: AnimatedListPage()),
+            ),
+            ListItem(
+              title: 'ExtensionMethod',
+              onPress: () =>
+                  RouteUtil.push(context, page: ExtensionMethodPage()),
+            ),
+            ListItem(
+              title: 'LoginUI',
+              onPress: () => RouteUtil.push(context, page: LoginUIPage()),
+            ),
+            ListItem(
+              title: 'ContainerExample',
+              onPress: () => RouteUtil.push(context, page: ContainerPage()),
+            ),
+            ListItem(
+              title: 'PDFViewPage',
+              onPress: () => RouteUtil.push(context, page: PdfViewPage()),
+            ),
+            ListItem(
+              title: 'CustomPaint',
+              onPress: () => RouteUtil.push(context, page: CustomPaintPage()),
+            ),
+            ListItem(
+              title: 'ListViewPage',
+              onPress: () => RouteUtil.push(context, page: ListViewPage()),
+            ),
+            ListItem(
+              title: 'CallNative',
+              onPress: () => RouteUtil.push(context, page: CallNativePage()),
+            ),
+            ListItem(
+              title: 'TabBar',
+              onPress: () => RouteUtil.push(context, page: TabBarPage()),
+            ),
+            ListItem(
+              title: 'Provider',
+              onPress: () => RouteUtil.push(context, page: ProviderPage()),
+            ),
+            ListItem(
+              title: 'Paint',
+              onPress: () => RouteUtil.push(context, page: CustomPaintPage()),
+            ),
+            ListItem(
+              title: 'GestureDetector',
+              onPress: () =>
+                  RouteUtil.push(context, page: GestureDetectorPage()),
+            ),
+            ListItem(
+              title: 'CustomDropDownMenu',
+              onPress: () =>
+                  RouteUtil.push(context, page: CustomDropDownMenuPage()),
+            ),
+            ListItem(
+              title: 'CustomTipsPage',
+              onPress: () => RouteUtil.push(context, page: CustomTipsPage()),
+            ),
+            ListItem(
+              title: 'MultipleChoicePage',
+              onPress: () =>
+                  RouteUtil.push(context, page: MultipleChoicePage()),
+            ),
+            ListItem(
+              title: 'MultipleTextFieldPage',
+              onPress: () =>
+                  RouteUtil.push(context, page: MultipleTextFieldPage()),
+            ),
+            ListItem(
+              title: 'CustomRegexPage',
+              onPress: () => RouteUtil.push(context, page: CustomRegexPage()),
+            ),
+            ListItem(
+              title: 'DownloadPdfPage',
+              onPress: () => RouteUtil.push(context, page: DownloadPdfPage()),
             ),
           ],
         ),

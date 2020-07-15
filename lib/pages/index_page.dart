@@ -36,7 +36,7 @@ class _IndexPageState extends State<IndexPage> {
         child: PageView.builder(
           controller: _controller,
           itemCount: _pageList.length,
-          physics: new NeverScrollableScrollPhysics(),
+          physics: NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) => _pageList[index],
         ),
       ),
@@ -51,7 +51,6 @@ class _IndexPageState extends State<IndexPage> {
             icon: Icon(FontAwesome.home),
             title: Text('首页'),
           ),
-//          BottomNavigationBarItem(icon: Icon(Entypo.search), title: Text('搜索')),
           BottomNavigationBarItem(
               icon: Icon(Icons.person_pin), title: Text('我的')),
         ],

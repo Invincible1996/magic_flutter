@@ -6,11 +6,10 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:magic_flutter/application.dart';
 import 'package:magic_flutter/pages/index_page.dart';
 import 'package:magic_flutter/util/route_util.dart';
 import 'package:permission_handler/permission_handler.dart';
-
-import 'home_page.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -29,6 +28,9 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
+    Application.screenWidth = MediaQuery.of(context).size.width;
+    Application.screeHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
         alignment: Alignment.topRight,

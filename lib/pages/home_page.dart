@@ -9,6 +9,7 @@ import 'package:magic_flutter/components/list_item.dart';
 import 'package:magic_flutter/pages/download_pdf_page.dart';
 import 'package:magic_flutter/pages/pdf_view_page.dart';
 import 'package:magic_flutter/pages/provider_page.dart';
+import 'package:magic_flutter/pages/redux_page.dart';
 import 'package:magic_flutter/pages/shop_cart_page.dart';
 import 'package:magic_flutter/pages/stepper_page.dart';
 import 'package:magic_flutter/pages/tab_bar_page.dart';
@@ -157,6 +158,10 @@ class _HomePageState extends State<HomePage> {
             ListItem(
               title: 'WrapWidget',
               onPress: () => RouteUtil.push(context, page: WrapWidgetPage()),
+            ),
+            ListItem(
+              title: 'Flutter Redux',
+              onPress: () => RouteUtil.push(context, page: ReduxPage()),
             ),
           ],
         ),

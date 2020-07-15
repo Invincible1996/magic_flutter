@@ -36,6 +36,8 @@ dependencies:
   flutter_spinkit: ^4.1.2
   webview_flutter: ^0.3.22+1
   simple_tooltip: ^0.1.10
+  redux: 4.0.0
+  flutter_redux: 0.6.0
 
 dev_dependencies:
   flutter_test:

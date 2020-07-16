@@ -1,8 +1,9 @@
 /*
- * @author kevin
- * @date 2020/6/24 10:48 AM
+ * @Author: kevin
+ * @Date: 2020-06-24 10:48:25
+ * @LastEditTime: 2020-07-16 11:37:46
  * @Description: flutter
-*/
+ */
 
 import 'package:flutter/foundation.dart';
 import 'package:magic_flutter/model/cart_model.dart';
@@ -49,11 +50,11 @@ class ShopCartProvider extends ChangeNotifier {
   }
 
   selectAll() {
+    print('object');
     selectCartList.clear();
     cartList.forEach((element) {
       element.isSelect = true;
     });
-    debugPrint('45---shop_cart_provider-----${cartList[0].isSelect}');
     selectCartList.addAll(cartList);
     notifyListeners();
   }

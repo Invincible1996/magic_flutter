@@ -6,7 +6,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:magic_flutter/redux/action/action.dart';
-import 'package:magic_flutter/redux/count_state.dart';
+import 'package:magic_flutter/redux/state/count_state.dart';
 
 class ReduxPage extends StatefulWidget {
   @override

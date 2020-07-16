@@ -6,7 +6,7 @@
 
 import 'package:magic_flutter/redux/action/action.dart';
 
-import '../count_state.dart';
+import '../state/count_state.dart';
 
 CountState reducer(CountState state, action) {
   //匹配Action

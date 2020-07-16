@@ -13,6 +13,7 @@ import 'package:magic_flutter/pages/redux_page.dart';
 import 'package:magic_flutter/pages/shop_cart_page.dart';
 import 'package:magic_flutter/pages/stepper_page.dart';
 import 'package:magic_flutter/pages/tab_bar_page.dart';
+import 'package:magic_flutter/pages/void_callback_page.dart';
 import 'package:magic_flutter/pages/webview_flutter_page.dart';
 import 'package:magic_flutter/pages/wrap_widget_page.dart';
 import 'package:magic_flutter/util/route_util.dart';
@@ -162,6 +163,10 @@ class _HomePageState extends State<HomePage> {
             ListItem(
               title: 'Flutter Redux',
               onPress: () => RouteUtil.push(context, page: ReduxPage()),
+            ),
+            ListItem(
+              title: 'VoidCallback',
+              onPress: () => RouteUtil.push(context, page: VoidCallbackPage()),
             ),
           ],
         ),

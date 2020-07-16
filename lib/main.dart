@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:magic_flutter/pages/splash_page.dart';
 import 'package:magic_flutter/provider/shop_cart_provider.dart';
-import 'package:magic_flutter/redux/count_state.dart';
+import 'package:magic_flutter/redux/state/count_state.dart';
 import 'package:magic_flutter/style/custom_style.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:provider/provider.dart';

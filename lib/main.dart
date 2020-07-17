@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:get/get.dart';
 import 'package:magic_flutter/pages/splash_page.dart';
 import 'package:magic_flutter/provider/count_provider.dart';
 import 'package:magic_flutter/provider/shop_cart_provider.dart';
@@ -45,7 +46,9 @@ class MyApp extends StatelessWidget {
           ],
           child: StoreProvider<CountState>(
               store: store,
-              child: MaterialApp(
+              child: GetMaterialApp(
+                defaultTransition: Transition.native,
+                navigatorKey: Get.key,
                 title: 'Magic Flutter',
                 debugShowCheckedModeBanner: false,
                 theme: ThemeData(

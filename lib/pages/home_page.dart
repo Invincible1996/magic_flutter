@@ -5,9 +5,12 @@
 */
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:magic_flutter/application.dart';
 import 'package:magic_flutter/components/list_item.dart';
 import 'package:magic_flutter/pages/download_pdf_page.dart';
 import 'package:magic_flutter/pages/draggable_grid_view_page.dart';
+import 'package:magic_flutter/pages/get_test_page.dart';
 import 'package:magic_flutter/pages/pdf_view_page.dart';
 import 'package:magic_flutter/pages/provider_page.dart';
 import 'package:magic_flutter/pages/redux_page.dart';
@@ -51,6 +54,27 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Magic Flutter'),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.share),
+              onPressed: () {
+                Get.bottomSheet(Container(
+//                  height: 120,
+                  width: Application.screenWidth,
+                  color: Colors.white,
+                ));
+//                Get.defaultDialog(
+//                    title: 'text',
+//                    radius: 5,
+//                    onConfirm: () {},
+//                    onCancel: () {},
+//                    textConfirm: '确认',
+//                    textCancel: '取消',
+//                    buttonColor: Colors.red,
+//                  middleText: '等了好久睡'
+//                );
+              })
+        ],
       ),
       body: Container(
         child: ListView(
@@ -167,13 +191,16 @@ class _HomePageState extends State<HomePage> {
             ),
             ListItem(
               title: 'VoidCallback',
-              onPress: () => RouteUtil.push(context, page: VoidCallbackPage()),
+//              onPress: () => RouteUtil.push(context, page: VoidCallbackPage()),
+              onPress: () => Get.to(VoidCallbackPage()),
             ),
             ListItem(
               title: 'DraggableGridViewPage',
               onPress: () =>
                   RouteUtil.push(context, page: DraggableGridViewPage()),
             ),
+            ListItem(
+                title: 'GetTestPage', onPress: () => Get.to(GetTestPage())),
           ],
         ),
       ),

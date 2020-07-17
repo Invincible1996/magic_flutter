@@ -10,22 +10,16 @@ import 'package:get/get.dart';
 class RouteUtil {
   ///push page
   static push(BuildContext context, {page}) {
-    Get.to(page);
-//    Navigator.of(context).push(CupertinoPageRoute(builder: (_) => page));
+    Get.to(page,duration: Duration(milliseconds: 350));
   }
 
   /// pop page
   static pop(BuildContext context) {
     Get.back();
-//    Navigator.of(context).pop();
   }
 
   /// replace page
   static replace(BuildContext context, {page}) {
     Get.offAll(page);
-//    Navigator.pushAndRemoveUntil(
-//        context,
-//        CupertinoPageRoute<void>(builder: (ctx) => page),
-//        (Route<dynamic> routes) => false);
   }
 }

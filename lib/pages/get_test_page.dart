@@ -6,7 +6,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:magic_flutter/pages/home_page.dart';
+import 'package:magic_flutter/application.dart';
 
 class GetTestPage extends StatefulWidget {
   @override
@@ -30,12 +30,77 @@ class _GetTestPageState extends State<GetTestPage> {
           children: <Widget>[
             RaisedButton(
               onPressed: () {
-                Get.offAll(HomePage());
+                Get.dialog(Container(
+                  child: Center(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(5)),
+                      width: Application.screenWidth * 0.85,
+                      height: 200,
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            '删除',
+                            style: Theme.of(context).textTheme.title,
+                          ),
+                          Text(
+                            '确认删除当前页面',
+                            style: Theme.of(context).textTheme.subtitle1,
+                          ),
+                          FlatButton(onPressed: (){
+                            Get.back();
+                          }, child: Text('close'))
+                        ],
+                      ),
+                    ),
+                  ),
+                ),barrierDismissible: false);
               },
               child: Text(
                 'AlertDialog',
                 style: Theme.of(context).textTheme.subtitle1,
               ),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Get.bottomSheet(Container(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5)),
+                    width: Application.screenWidth,
+                    height: 200,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          '上海',
+                          style: Theme.of(context).textTheme.title,
+                        ),
+                        Text(
+                          '深圳',
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
+                      ],
+                    ),
+                  ),
+                ));
+              },
+              child: Text(
+                'bottomSheet',
+                style: Theme.of(context).textTheme.subtitle1,
+              ),
+            ),
+            RaisedButton(
+              child: Text('SnackBar'),
+              onPressed: () {
+                Get.snackbar('title', 'message',
+                    backgroundColor: Colors.red,
+                    snackPosition: SnackPosition.TOP,
+                    borderRadius: 5,
+                    maxWidth: Application.screenWidth);
+              },
             )
           ],
         ),

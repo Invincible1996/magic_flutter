@@ -71,6 +71,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.0.9"
+  drag_select_grid_view:
+    dependency: "direct main"
+    description:
+      name: drag_select_grid_view
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.2.0"
+  dragablegridview_flutter:
+    dependency: "direct main"
+    description:
+      name: dragablegridview_flutter
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.2.5"
   file:
     dependency: transitive
     description:

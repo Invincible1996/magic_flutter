@@ -7,6 +7,7 @@
 import 'package:flutter/material.dart';
 import 'package:magic_flutter/components/list_item.dart';
 import 'package:magic_flutter/pages/download_pdf_page.dart';
+import 'package:magic_flutter/pages/draggable_grid_view_page.dart';
 import 'package:magic_flutter/pages/pdf_view_page.dart';
 import 'package:magic_flutter/pages/provider_page.dart';
 import 'package:magic_flutter/pages/redux_page.dart';
@@ -167,6 +168,11 @@ class _HomePageState extends State<HomePage> {
             ListItem(
               title: 'VoidCallback',
               onPress: () => RouteUtil.push(context, page: VoidCallbackPage()),
+            ),
+            ListItem(
+              title: 'DraggableGridViewPage',
+              onPress: () =>
+                  RouteUtil.push(context, page: DraggableGridViewPage()),
             ),
           ],
         ),

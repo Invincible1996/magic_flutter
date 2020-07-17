@@ -38,7 +38,8 @@ dependencies:
   simple_tooltip: ^0.1.10
   redux: 4.0.0
   flutter_redux: 0.6.0
-
+  dragablegridview_flutter: ^0.2.5
+  drag_select_grid_view: ^0.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

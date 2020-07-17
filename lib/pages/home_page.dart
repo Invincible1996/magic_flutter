@@ -10,6 +10,7 @@ import 'package:magic_flutter/application.dart';
 import 'package:magic_flutter/components/list_item.dart';
 import 'package:magic_flutter/pages/download_pdf_page.dart';
 import 'package:magic_flutter/pages/draggable_grid_view_page.dart';
+import 'package:magic_flutter/pages/draggable_scrollable_sheet_page.dart';
 import 'package:magic_flutter/pages/get_test_page.dart';
 import 'package:magic_flutter/pages/pdf_view_page.dart';
 import 'package:magic_flutter/pages/provider_page.dart';
@@ -201,6 +202,8 @@ class _HomePageState extends State<HomePage> {
             ),
             ListItem(
                 title: 'GetTestPage', onPress: () => Get.to(GetTestPage())),
+            ListItem(
+                title: 'DraggableScrollableSheet', onPress: () => Get.to(DraggableScrollableSheetPage())),
           ],
         ),
       ),

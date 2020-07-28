@@ -16,7 +16,6 @@ class CustomDropDownMenuPage extends StatefulWidget {
 
 class _CustomDropDownMenuPageState extends State<CustomDropDownMenuPage>
     with TickerProviderStateMixin {
-  bool _isShow = false;
   AnimationController controller;
   Animation<double> animation;
   int _modelItemIndex = 0;
@@ -116,7 +115,6 @@ class _CustomDropDownMenuPageState extends State<CustomDropDownMenuPage>
                         itemList: modelList[_headerIndex].typeList,
                         onPress: (value, index) {
                           setState(() {
-                            _isShow = value;
                             _modelItemIndex = index;
                           });
                         },

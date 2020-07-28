@@ -8,10 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:magic_flutter/application.dart';
 import 'package:magic_flutter/components/list_item.dart';
+import 'package:magic_flutter/pages/common_dialog_page.dart';
 import 'package:magic_flutter/pages/download_pdf_page.dart';
 import 'package:magic_flutter/pages/draggable_grid_view_page.dart';
 import 'package:magic_flutter/pages/draggable_scrollable_sheet_page.dart';
 import 'package:magic_flutter/pages/get_test_page.dart';
+import 'package:magic_flutter/pages/hero_animation_page.dart';
+import 'package:magic_flutter/pages/paint_page.dart';
 import 'package:magic_flutter/pages/pdf_view_page.dart';
 import 'package:magic_flutter/pages/provider_page.dart';
 import 'package:magic_flutter/pages/redux_page.dart';
@@ -203,7 +206,15 @@ class _HomePageState extends State<HomePage> {
             ListItem(
                 title: 'GetTestPage', onPress: () => Get.to(GetTestPage())),
             ListItem(
-                title: 'DraggableScrollableSheet', onPress: () => Get.to(DraggableScrollableSheetPage())),
+                title: 'DraggableScrollableSheet',
+                onPress: () => Get.to(DraggableScrollableSheetPage())),
+            ListItem(
+                title: 'HeroAnimationPage',
+                onPress: () => Get.to(HeroAnimationPage())),
+            ListItem(title: 'PaintPage', onPress: () => Get.to(PaintPage())),
+            ListItem(
+                title: 'CommonDialogPage',
+                onPress: () => Get.to(CommonDialogPage())),
           ],
         ),
       ),

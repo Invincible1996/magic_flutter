@@ -1,7 +1,7 @@
 /*
  * @Author: kevin
  * @Date: 2020-08-08 11:56:10
- * @LastEditTime: 2020-08-08 14:41:22
+ * @LastEditTime: 2020-08-08 15:00:46
  * @Description: 单选题
  */
 
@@ -82,20 +82,20 @@ class _SingleChoicePageState extends State<SingleChoicePage> {
                           dataList = newList2;
                         });
                       } else {
-                        // showToast('回答正确');
-                        // //如果选择的是正确答案，将其他的状态改为不可选中即可
-                        // List<ChoiceModel> newList = dataList
-                        //     .map((e) => ChoiceModel(
-                        //           chooice: e.chooice,
-                        //           value: e.value,
-                        //           isCanSelect: false,
-                        //           isRightAnswer: e.isRightAnswer,
-                        //           isSeclect: e.isSeclect,
-                        //         ))
-                        //     .toList();
-                        // setState(() {
-                        //   dataList = newList;
-                        // });
+                        showToast('回答正确');
+                        //如果选择的是正确答案，将其他的状态改为不可选中即可
+                        List<ChoiceModel> newList = dataList
+                            .map((e) => ChoiceModel(
+                                  chooice: e.chooice,
+                                  value: e.value,
+                                  isCanSelect: false,
+                                  isRightAnswer: e.isRightAnswer,
+                                  isSeclect: e.chooice == choice,
+                                ))
+                            .toList();
+                        setState(() {
+                          dataList = newList;
+                        });
                       }
                     },
                   )))
@@ -162,19 +162,19 @@ class _ChoiceItemState extends State<ChoiceItem> {
       onTap: () {
         print(_isCanSelect);
 
-        if (widget.isRightAnswer) {
-          showToast('回答正确');
-          setState(() {
-            _isSelect = true;
-            _isCanSelect = false;
-          });
-          return;
-        }
+        // if (widget.isRightAnswer) {
+        //   showToast('回答正确');
+        //   setState(() {
+        //     _isSelect = true;
+        //     _isCanSelect = false;
+        //   });
+        //   return;
+        // }
 
         if (_isCanSelect) {
-          setState(() {
-            _isSelect = !_isSelect;
-          });
+          // setState(() {
+          //   _isSelect = !_isSelect;
+          // });
           widget.onItemSelect(
               widget.index, widget.isRightAnswer, widget.choice);
         } else {}

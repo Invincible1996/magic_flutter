@@ -1,6 +1,14 @@
+/*
+ * @Author: kevin
+ * @Date: 2020-06-23 13:26:04
+ * @LastEditTime: 2020-08-08 12:21:33
+ * @Description: flutter
+ */
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:get/get.dart';
+import 'package:magic_flutter/pages/multiple_finger_page.dart';
+import 'package:magic_flutter/pages/single_choice_page.dart';
 import 'package:magic_flutter/pages/splash_page.dart';
 import 'package:magic_flutter/provider/count_provider.dart';
 import 'package:magic_flutter/provider/shop_cart_provider.dart';
@@ -56,7 +64,7 @@ class MyApp extends StatelessWidget {
                   visualDensity: VisualDensity.adaptivePlatformDensity,
                   buttonColor: CustomStyle.themeColor,
                 ),
-                home: SplashPage(),
+                home: SingleChoicePage(),
               )),
         ));
   }

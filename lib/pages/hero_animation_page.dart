@@ -1,8 +1,9 @@
 /*
- * @author kevin
- * @date 2020/7/22 5:27 下午
+ * @Author: kevin
+ * @Date: 2020-07-22 17:27:41
+ * @LastEditTime: 2020-07-29 11:07:11
  * @Description: flutter
-*/
+ */
 import 'package:flutter/material.dart';
 
 class HeroAnimationPage extends StatefulWidget {
@@ -52,7 +53,7 @@ class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+        appBar: AppBar(),
         body: Hero(
           tag: "profile-image",
           child: Container(

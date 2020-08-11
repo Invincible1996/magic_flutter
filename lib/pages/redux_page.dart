@@ -1,8 +1,9 @@
 /*
- * @author kevin
- * @date 2020/7/15 3:35 下午
+ * @Author: kevin
+ * @Date: 2020-07-15 15:35:27
+ * @LastEditTime: 2020-08-11 16:40:56
  * @Description: flutter
-*/
+ */
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:magic_flutter/redux/action/action.dart';
@@ -31,7 +32,7 @@ class _ReduxPageState extends State<ReduxPage> {
           return Center(
             child: Text(
               count.toString(),
-              style: Theme.of(context).textTheme.display4,
+              style: Theme.of(context).textTheme.bodyText1,
             ),
           );
         },

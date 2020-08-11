@@ -109,17 +109,15 @@ class _CustomDropDownMenuPageState extends State<CustomDropDownMenuPage>
                             ],
                           ),
                         )),
-                true
-                    ? CustomModel(
-                        itemSelectIndex: _modelItemIndex,
-                        itemList: modelList[_headerIndex].typeList,
-                        onPress: (value, index) {
-                          setState(() {
-                            _modelItemIndex = index;
-                          });
-                        },
-                      )
-                    : SizedBox.shrink()
+                CustomModel(
+                  itemSelectIndex: _modelItemIndex,
+                  itemList: modelList[_headerIndex].typeList,
+                  onPress: (value, index) {
+                    setState(() {
+                      _modelItemIndex = index;
+                    });
+                  },
+                )
               ],
             ))
           ],

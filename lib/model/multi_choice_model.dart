@@ -1,7 +1,7 @@
 /*
  * @Author: kevin
  * @Date: 2020-08-11 11:48:39
- * @LastEditTime: 2020-08-11 14:41:18
+ * @LastEditTime: 2020-08-11 16:12:18
  * @Description: flutter
  */
 class MultiChoiceModel {
@@ -39,18 +39,28 @@ class MultiChoiceModel {
 class Options {
   String choice;
   String value;
+  bool isCanCheck;
+  bool isCheck;
+  bool isRight;
 
-  Options({this.choice, this.value});
+  Options(
+      {this.choice, this.value, this.isCanCheck, this.isCheck, this.isRight});
 
   Options.fromJson(Map<String, dynamic> json) {
     choice = json['choice'];
     value = json['value'];
+    isCanCheck = json['isCanCheck'];
+    isCheck = json['isCheck'];
+    isRight = json['isRight'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['choice'] = this.choice;
     data['value'] = this.value;
+    data['isCanCheck'] = this.isCanCheck;
+    data['isCheck'] = this.isCheck;
+    data['isRight'] = this.isRight;
     return data;
   }
 }

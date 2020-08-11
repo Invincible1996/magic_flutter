@@ -30,32 +30,36 @@ class _GetTestPageState extends State<GetTestPage> {
           children: <Widget>[
             RaisedButton(
               onPressed: () {
-                Get.dialog(Container(
-                  child: Center(
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(5)),
-                      width: Application.screenWidth * 0.85,
-                      height: 200,
-                      child: Column(
-                        children: <Widget>[
-                          Text(
-                            '删除',
-                            style: Theme.of(context).textTheme.title,
+                Get.dialog(
+                    Container(
+                      child: Center(
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5)),
+                          width: Application.screenWidth * 0.85,
+                          height: 200,
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                '删除',
+                                style: Theme.of(context).textTheme.headline1,
+                              ),
+                              Text(
+                                '确认删除当前页面',
+                                style: Theme.of(context).textTheme.subtitle1,
+                              ),
+                              FlatButton(
+                                  onPressed: () {
+                                    Get.back();
+                                  },
+                                  child: Text('close'))
+                            ],
                           ),
-                          Text(
-                            '确认删除当前页面',
-                            style: Theme.of(context).textTheme.subtitle1,
-                          ),
-                          FlatButton(onPressed: (){
-                            Get.back();
-                          }, child: Text('close'))
-                        ],
+                        ),
                       ),
                     ),
-                  ),
-                ),barrierDismissible: false);
+                    barrierDismissible: false);
               },
               child: Text(
                 'AlertDialog',
@@ -76,7 +80,7 @@ class _GetTestPageState extends State<GetTestPage> {
                       children: <Widget>[
                         Text(
                           '上海',
-                          style: Theme.of(context).textTheme.title,
+                          style: Theme.of(context).textTheme.headline2,
                         ),
                         Text(
                           '深圳',

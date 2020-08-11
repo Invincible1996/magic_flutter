@@ -1,14 +1,13 @@
 /*
  * @Author: kevin
  * @Date: 2020-06-23 13:26:04
- * @LastEditTime: 2020-08-11 14:01:49
+ * @LastEditTime: 2020-08-11 16:40:21
  * @Description: flutter
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:get/get.dart';
 import 'package:magic_flutter/pages/multiple_choice_page.dart';
-import 'package:magic_flutter/pages/splash_page.dart';
 import 'package:magic_flutter/provider/count_provider.dart';
 import 'package:magic_flutter/provider/shop_cart_provider.dart';
 import 'package:magic_flutter/redux/state/count_state.dart';

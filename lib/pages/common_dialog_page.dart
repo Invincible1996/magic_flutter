@@ -12,7 +12,6 @@ class CommonDialogPage extends StatefulWidget {
 }
 
 class _CommonDialogPageState extends State<CommonDialogPage> {
-  bool _showModal = false;
   int _count = 0;
 
   @override

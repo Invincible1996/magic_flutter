@@ -6,7 +6,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:magic_flutter/model/multi_choice_model.dart';
 import 'package:magic_flutter/style/custom_style.dart';
+import 'package:oktoast/oktoast.dart';
 
 class MultipleChoicePage extends StatefulWidget {
   @override
@@ -14,6 +16,20 @@ class MultipleChoicePage extends StatefulWidget {
 }
 
 class _MultipleChoicePageState extends State<MultipleChoicePage> {
+  List<MultiChoiceModel> dataList = [
+    MultiChoiceModel(
+      question: '你做喜欢的歌曲是?',
+      id: 1,
+      rightAnswer: ['A', 'C'],
+      options: [
+        Options(choice: 'A', value: '大地'),
+        Options(choice: 'B', value: '真的爱你'),
+        Options(choice: 'C', value: '光辉岁月'),
+        Options(choice: 'D', value: '情人'),
+      ],
+    )
+  ];
+
   @override
   initState() {
     super.initState();
@@ -24,76 +40,58 @@ class _MultipleChoicePageState extends State<MultipleChoicePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('MultipleChoicePage'),
+        actions: <Widget>[
+          GestureDetector(
+            onTap: () => showToast('msg'),
+            child: Row(
+              children: <Widget>[
+                Text('确定',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    )),
+                SizedBox(
+                  width: 10,
+                ),
+              ],
+            ),
+          )
+        ],
       ),
       body: PageView(
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  '多选题：',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                ),
-                Text(
-                    '根据《中华人名共和国民法典》，自然人享有民权，有依法____、____、____、或者____他人使用自己的姓名，但是不得违背公序良俗。'),
-                SizedBox(
-                  height: 20,
-                ),
-                ChoiceItem(
-                  isSelect: false,
-                  value: 'A.决定',
-                ),
-                ChoiceItem(
-                  isSelect: true,
-                  value: 'B.使用',
-                ),
-                ChoiceItem(
-                  isSelect: false,
-                  value: 'C.变更',
-                ),
-                ChoiceItem(
-                  isSelect: true,
-                  value: 'D.许可',
-                ),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  '多选题：',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                ),
-                Text(
-                    '根据《中华人名共和国民法典》，自然人享有民权，有依法____、____、____、或者____他人使用自己的姓名，但是不得违背公序良俗。'),
-                SizedBox(
-                  height: 20,
-                ),
-                ChoiceItem(
-                  isSelect: false,
-                  value: 'A.决定',
-                ),
-                ChoiceItem(
-                  isSelect: true,
-                  value: 'B.使用',
-                ),
-                ChoiceItem(
-                  isSelect: false,
-                  value: 'C.变更',
-                ),
-                ChoiceItem(
-                  isSelect: true,
-                  value: 'D.许可',
-                ),
-              ],
-            ),
-          ),
-        ],
+        children: dataList
+            .asMap()
+            .map((key, value) => MapEntry(
+                key,
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text('${key + 1}、${value.question}',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      Wrap(
+                        children: value.options
+                            .asMap()
+                            .map((key, value) => MapEntry(
+                                key,
+                                ChoiceItem(
+                                  choice: value.choice,
+                                  value: value.value,
+                                )))
+                            .values
+                            .toList(),
+                      )
+                    ],
+                  ),
+                )))
+            .values
+            .toList(),
       ),
     );
   }
@@ -105,6 +103,7 @@ class _MultipleChoicePageState extends State<MultipleChoicePage> {
 }
 
 class ChoiceItem extends StatefulWidget {
+  final String choice;
   final bool isSelect;
   final String value;
   final Function onPress;
@@ -114,6 +113,7 @@ class ChoiceItem extends StatefulWidget {
     this.isSelect,
     this.value,
     this.onPress,
+    this.choice,
   }) : super(key: key);
 
   @override
@@ -143,8 +143,10 @@ class _ChoiceItemState extends State<ChoiceItem> {
               color: CustomStyle.dividerColor,
             )),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text('${widget.value}'),
+            Container(child: Text('${widget.choice}')),
+            Text('、${widget.value}'),
           ],
         ),
       ),

@@ -1,4 +1,10 @@
 /*
+ * @Author: kevin
+ * @Date: 2020-06-23 16:40:18
+ * @LastEditTime: 2020-08-11 13:58:30
+ * @Description: flutter
+ */
+/*
  * @author kevin
  * @date 2020/6/23 4:40 PM
  * @Description: flutter
@@ -17,7 +23,6 @@ class ShopCartPage extends StatefulWidget {
 }
 
 class _ShopCartPageState extends State<ShopCartPage> {
-  bool _isSelectAll = false;
   List<CartModel> cartList = <CartModel>[
     CartModel(title: '长城，让我忘记自己孤身一人', isSelect: false),
     CartModel(title: '比任何对手都强，乃人生最大的烦恼', isSelect: false),

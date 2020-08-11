@@ -1,7 +1,7 @@
 /*
  * @Author: kevin
  * @Date: 2020-08-08 11:56:10
- * @LastEditTime: 2020-08-08 15:00:46
+ * @LastEditTime: 2020-08-10 17:31:24
  * @Description: 单选题
  */
 
@@ -18,25 +18,25 @@ class _SingleChoicePageState extends State<SingleChoicePage> {
   List<ChoiceModel> dataList = [
     ChoiceModel(
         chooice: 'A',
-        value: '细雨带风1',
+        value: '细雨带风湿透黄昏的街道',
         isCanSelect: true,
         isRightAnswer: false,
         isSeclect: false),
     ChoiceModel(
         chooice: 'B',
-        value: '细雨带风2',
+        value: '细雨带风湿透黄昏的街道',
         isCanSelect: true,
         isRightAnswer: false,
         isSeclect: false),
     ChoiceModel(
         chooice: 'C',
-        value: '细雨带风3',
+        value: '细雨带风湿透黄昏的街道',
         isCanSelect: true,
         isRightAnswer: false,
         isSeclect: false),
     ChoiceModel(
         chooice: 'D',
-        value: '细雨带风4',
+        value: '细雨带风湿透黄昏的街道',
         isCanSelect: true,
         isRightAnswer: true,
         isSeclect: false),

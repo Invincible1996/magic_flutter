@@ -1,7 +1,7 @@
 /*
  * @Author: kevin
  * @Date: 2020-06-23 13:56:40
- * @LastEditTime: 2020-06-23 15:33:22
+ * @LastEditTime: 2020-08-11 13:58:41
  * @Description: flutter
  */
 
@@ -61,7 +61,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   requestPermission() async {
-    Map<Permission, PermissionStatus> status = await [
+    await [
       // Permission.location,
       Permission.storage,
     ].request();

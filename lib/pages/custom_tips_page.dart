@@ -16,7 +16,6 @@ class CustomTipsPage extends StatefulWidget {
 class _CustomTipsPageState extends State<CustomTipsPage> {
   bool _isShow = false;
   int _colorIndex = 0;
-  int _sizeIndex = 0;
 
   @override
   initState() {
@@ -62,11 +61,7 @@ class _CustomTipsPageState extends State<CustomTipsPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _sizeIndex = 0;
-                      });
-                    },
+                    onTap: () {},
                     child: Container(
                       width: 5,
                       height: 5,
@@ -77,11 +72,7 @@ class _CustomTipsPageState extends State<CustomTipsPage> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _sizeIndex = 1;
-                      });
-                    },
+                    onTap: () {},
                     child: Container(
                       width: 10,
                       height: 10,
@@ -92,11 +83,7 @@ class _CustomTipsPageState extends State<CustomTipsPage> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _sizeIndex = 2;
-                      });
-                    },
+                    onTap: () {},
                     child: Container(
                       width: 15,
                       height: 15,

@@ -8,18 +8,37 @@ class ProviderPage extends StatefulWidget {
 }
 
 class _ProviderPageState extends State<ProviderPage> {
+  CounterProvider counterProvider;
+
+  @override
+  void initState() {
+    super.initState();
+//    Future.delayed(Duration.zero,(){
+//      Provider.of<CounterProvider>(context,listen: false).count1 = 200;
+//    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('ProviderPage')),
-      body: Consumer<CounterProvider>(builder: (context, counter, _) {
-        return Text('${counter.count}');
-      }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Provider.of<CounterProvider>(context, listen: false).increment();
-        },
-        child: Icon(Icons.add),
+    return ChangeNotifierProvider(
+      create: (_) => CounterProvider(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('ProviderPage'),
+        ),
+        body: Container(
+          child: Consumer<CounterProvider>(builder: (context, model, _) {
+            return Column(
+              children: <Widget>[
+                Text('${model.count}'),
+                RaisedButton(
+                  onPressed: () => model.increment(),
+                  child: Icon(Icons.add),
+                )
+              ],
+            );
+          }),
+        ),
       ),
     );
   }

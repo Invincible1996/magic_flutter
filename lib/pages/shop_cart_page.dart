@@ -1,14 +1,10 @@
 /*
  * @Author: kevin
  * @Date: 2020-06-23 16:40:18
- * @LastEditTime: 2020-08-11 13:58:30
+ * @LastEditTime: 2020-08-16 15:16:40
  * @Description: flutter
  */
-/*
- * @author kevin
- * @date 2020/6/23 4:40 PM
- * @Description: flutter
-*/
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:magic_flutter/components/shop_cart_item.dart';

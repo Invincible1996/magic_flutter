@@ -7,13 +7,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:get/get.dart';
-import 'package:magic_flutter/pages/multiple_choice_page.dart';
-import 'package:magic_flutter/provider/count_provider.dart';
-import 'package:magic_flutter/provider/shop_cart_provider.dart';
+import 'package:magic_flutter/pages/splash_page.dart';
 import 'package:magic_flutter/redux/state/count_state.dart';
 import 'package:magic_flutter/style/custom_style.dart';
 import 'package:oktoast/oktoast.dart';
-import 'package:provider/provider.dart';
 import 'package:redux/redux.dart';
 
 import 'redux/reducers/count_reducer.dart';
@@ -41,29 +38,19 @@ class MyApp extends StatelessWidget {
         animationBuilder: Miui10AnimBuilder(),
         animationDuration: Duration(milliseconds: 200),
         duration: Duration(seconds: 3),
-        child: MultiProvider(
-          providers: [
-            ChangeNotifierProvider(
-              create: (_) => ShopCartProvider(),
-            ),
-            ChangeNotifierProvider(
-              create: (_) => CounterProvider(),
-            )
-          ],
-          child: StoreProvider<CountState>(
-              store: store,
-              child: GetMaterialApp(
-                defaultTransition: Transition.native,
-                navigatorKey: Get.key,
-                title: 'Magic Flutter',
-                debugShowCheckedModeBanner: false,
-                theme: ThemeData(
-                  primaryColor: CustomStyle.themeColor,
-                  visualDensity: VisualDensity.adaptivePlatformDensity,
-                  buttonColor: CustomStyle.themeColor,
-                ),
-                home: MultipleChoicePage(),
-              )),
-        ));
+        child: StoreProvider<CountState>(
+            store: store,
+            child: GetMaterialApp(
+              defaultTransition: Transition.native,
+              navigatorKey: Get.key,
+              title: 'Magic Flutter',
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                primaryColor: CustomStyle.themeColor,
+                visualDensity: VisualDensity.adaptivePlatformDensity,
+                buttonColor: CustomStyle.themeColor,
+              ),
+              home: SplashPage(),
+            )));
   }
 }

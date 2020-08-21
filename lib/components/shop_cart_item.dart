@@ -1,4 +1,10 @@
 /*
+ * @Author: kevin
+ * @Date: 2020-06-23 16:54:52
+ * @LastEditTime: 2020-08-16 15:36:52
+ * @Description: flutter
+ */
+/*
  * @author kevin
  * @date 2020/6/23 4:54 PM
  * @Description: flutter
@@ -55,7 +61,9 @@ class _ShopCartItemState extends State<ShopCartItem> {
             width: 120,
             height: 120,
           ),
-          SizedBox(width: 8,),
+          SizedBox(
+            width: 8,
+          ),
           Expanded(
               flex: 1,
               child: Text(

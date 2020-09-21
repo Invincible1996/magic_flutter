@@ -204,12 +204,9 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
                     ),
                     ListItem(
                       title: 'VoidCallback',
-//              onPress: () => RouteUtil.push(context, page: VoidCallbackPage()),
                       onPress: () => Get.to(VoidCallbackPage()),
                     ),
-                    ListItem(
-                        title: 'DraggableGridViewPage',
-                        onPress: () => RouteUtil.push(context, page: DraggableGridViewPage())),
+                    ListItem(title: 'DraggableGridViewPage', onPress: () => RouteUtil.push(context, page: DraggableGridViewPage())),
                     ListItem(title: 'GetTestPage', onPress: () => Get.to(GetTestPage())),
                     ListItem(title: 'DraggableScrollableSheet', onPress: () => Get.to(DraggableScrollableSheetPage())),
                     ListItem(title: 'HeroAnimationPage', onPress: () => Get.to(HeroAnimationPage())),

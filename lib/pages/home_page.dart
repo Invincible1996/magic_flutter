@@ -220,7 +220,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
                 ),
               )
             : Center(
-                child: Text('未登录'),
+                child: Text('未登录。。。。'),
               );
       }),
       floatingActionButton: FloatingActionButton(

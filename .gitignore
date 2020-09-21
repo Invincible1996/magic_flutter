@@ -29,6 +29,7 @@
 .pub-cache/
 .pub/
 /build/
+pubspec.lock
 
 # Web related
 lib/generated_plugin_registrant.dart
@@ -41,3 +42,11 @@ app.*.map.json
 
 # Exceptions to above rules.
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+
+# npm
+/node_modules/
+.package-lock.json
+
+# ios
+./ios/Podfile.lock

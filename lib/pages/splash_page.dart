@@ -6,10 +6,12 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:magic_flutter/application.dart';
 import 'package:magic_flutter/pages/index_page.dart';
-import 'package:magic_flutter/util/route_util.dart';
+import 'package:magic_flutter/provider/login_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:provider/provider.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -21,8 +23,10 @@ class _SplashPageState extends State<SplashPage> {
   initState() {
     super.initState();
     requestPermission();
-    Future.delayed(Duration(milliseconds: 200), () {
-      RouteUtil.replace(context, page: IndexPage());
+    Future.delayed(Duration(milliseconds: 2000), () {
+//      RouteUtil.replace(context, page: IndexPage());
+      Get.offAll(IndexPage());
+      Provider.of<LoginProvider>(context, listen: false).initUser();
     });
   }
 

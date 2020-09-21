@@ -8,10 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:magic_flutter/application.dart';
 import 'package:magic_flutter/components/list_item.dart';
+import 'package:magic_flutter/pages/calendar_page.dart';
 import 'package:magic_flutter/pages/common_dialog_page.dart';
 import 'package:magic_flutter/pages/download_pdf_page.dart';
 import 'package:magic_flutter/pages/draggable_grid_view_page.dart';
 import 'package:magic_flutter/pages/draggable_scrollable_sheet_page.dart';
+import 'package:magic_flutter/pages/drop_down_menu_page.dart';
 import 'package:magic_flutter/pages/get_test_page.dart';
 import 'package:magic_flutter/pages/hero_animation_page.dart';
 import 'package:magic_flutter/pages/paint_page.dart';
@@ -24,7 +26,9 @@ import 'package:magic_flutter/pages/tab_bar_page.dart';
 import 'package:magic_flutter/pages/void_callback_page.dart';
 import 'package:magic_flutter/pages/webview_flutter_page.dart';
 import 'package:magic_flutter/pages/wrap_widget_page.dart';
+import 'package:magic_flutter/provider/login_provider.dart';
 import 'package:magic_flutter/util/route_util.dart';
+import 'package:provider/provider.dart';
 
 import 'animated/animated_list_page.dart';
 import 'call_native_page.dart';
@@ -47,14 +51,19 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
   @override
   initState() {
     super.initState();
+    debugPrint('54---home_page-----initState');
   }
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
+    final loginModel = Provider.of<LoginProvider>(context, listen: false);
+    debugPrint('65---home_page-----${loginModel.isLogin}');
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Magic Flutter'),
@@ -80,143 +89,145 @@ class _HomePageState extends State<HomePage> {
               })
         ],
       ),
-      body: Container(
-        child: ListView(
-          children: <Widget>[
-            ListItem(
-              title: 'download pdf',
-              onPress: () => RouteUtil.push(context, page: DownloadPdfPage()),
-            ),
-            ListItem(
-              title: 'ShopCartPage',
-              onPress: () => RouteUtil.push(context, page: ShopCartPage()),
-            ),
-            ListItem(
-              title: 'Exception',
-              onPress: () => RouteUtil.push(context, page: ExceptionPage()),
-            ),
-            ListItem(
-              title: 'FutureBuilder',
-              onPress: () => RouteUtil.push(context, page: FutureBuilderPage()),
-            ),
-            ListItem(
-              title: 'StepperPage',
-              onPress: () => RouteUtil.push(context, page: StepperPage()),
-            ),
-            ListItem(
-              title: 'WebView',
-              onPress: () =>
-                  RouteUtil.push(context, page: WebviewFlutterPage()),
-            ),
-            ListItem(
-              title: 'AnimatedPage',
-              onPress: () => RouteUtil.push(context, page: AnimatedListPage()),
-            ),
-            ListItem(
-              title: 'ExtensionMethod',
-              onPress: () =>
-                  RouteUtil.push(context, page: ExtensionMethodPage()),
-            ),
-            ListItem(
-              title: 'LoginUI',
-              onPress: () => RouteUtil.push(context, page: LoginUIPage()),
-            ),
-            ListItem(
-              title: 'ContainerExample',
-              onPress: () => RouteUtil.push(context, page: ContainerPage()),
-            ),
-            ListItem(
-              title: 'PDFViewPage',
-              onPress: () => RouteUtil.push(context, page: PdfViewPage()),
-            ),
-            ListItem(
-              title: 'CustomPaint',
-              onPress: () => RouteUtil.push(context, page: CustomPaintPage()),
-            ),
-            ListItem(
-              title: 'ListViewPage',
-              onPress: () => RouteUtil.push(context, page: ListViewPage()),
-            ),
-            ListItem(
-              title: 'CallNative',
-              onPress: () => RouteUtil.push(context, page: CallNativePage()),
-            ),
-            ListItem(
-              title: 'TabBar',
-              onPress: () => RouteUtil.push(context, page: TabBarPage()),
-            ),
-            ListItem(
-              title: 'Provider',
-              onPress: () => RouteUtil.push(context, page: ProviderPage()),
-            ),
-            ListItem(
-              title: 'Paint',
-              onPress: () => RouteUtil.push(context, page: CustomPaintPage()),
-            ),
-            ListItem(
-              title: 'GestureDetector',
-              onPress: () =>
-                  RouteUtil.push(context, page: GestureDetectorPage()),
-            ),
-            ListItem(
-              title: 'CustomDropDownMenu',
-              onPress: () =>
-                  RouteUtil.push(context, page: CustomDropDownMenuPage()),
-            ),
-            ListItem(
-              title: 'CustomTipsPage',
-              onPress: () => RouteUtil.push(context, page: CustomTipsPage()),
-            ),
-            ListItem(
-              title: 'MultipleChoicePage',
-              onPress: () =>
-                  RouteUtil.push(context, page: MultipleChoicePage()),
-            ),
-            ListItem(
-              title: 'MultipleTextFieldPage',
-              onPress: () =>
-                  RouteUtil.push(context, page: MultipleTextFieldPage()),
-            ),
-            ListItem(
-              title: 'CustomRegexPage',
-              onPress: () => RouteUtil.push(context, page: CustomRegexPage()),
-            ),
-            ListItem(
-              title: 'DownloadPdfPage',
-              onPress: () => RouteUtil.push(context, page: DownloadPdfPage()),
-            ),
-            ListItem(
-              title: 'WrapWidget',
-              onPress: () => RouteUtil.push(context, page: WrapWidgetPage()),
-            ),
-            ListItem(
-              title: 'Flutter Redux',
-              onPress: () => RouteUtil.push(context, page: ReduxPage()),
-            ),
-            ListItem(
-              title: 'VoidCallback',
+      body: Consumer<LoginProvider>(builder: (context, model, index) {
+        return model.isLogin
+            ? Container(
+                child: ListView(
+                  children: <Widget>[
+                    ListItem(
+                      title: 'drop down menu page',
+                      onPress: () => RouteUtil.push(context, page: DropDownMenuPage()),
+                    ),
+                    ListItem(
+                      title: 'download pdf',
+                      onPress: () => RouteUtil.push(context, page: DownloadPdfPage()),
+                    ),
+                    ListItem(
+                      title: 'ShopCartPage',
+                      onPress: () => RouteUtil.push(context, page: ShopCartPage()),
+                    ),
+                    ListItem(
+                      title: 'Exception',
+                      onPress: () => RouteUtil.push(context, page: ExceptionPage()),
+                    ),
+                    ListItem(
+                      title: 'FutureBuilder',
+                      onPress: () => RouteUtil.push(context, page: FutureBuilderPage()),
+                    ),
+                    ListItem(
+                      title: 'StepperPage',
+                      onPress: () => RouteUtil.push(context, page: StepperPage()),
+                    ),
+                    ListItem(
+                      title: 'WebView',
+                      onPress: () => RouteUtil.push(context, page: WebviewFlutterPage()),
+                    ),
+                    ListItem(
+                      title: 'AnimatedPage',
+                      onPress: () => RouteUtil.push(context, page: AnimatedListPage()),
+                    ),
+                    ListItem(
+                      title: 'ExtensionMethod',
+                      onPress: () => RouteUtil.push(context, page: ExtensionMethodPage()),
+                    ),
+                    ListItem(
+                      title: 'LoginUI',
+                      onPress: () => RouteUtil.push(context, page: LoginUIPage()),
+                    ),
+                    ListItem(
+                      title: 'ContainerExample',
+                      onPress: () => RouteUtil.push(context, page: ContainerPage()),
+                    ),
+                    ListItem(
+                      title: 'PDFViewPage',
+                      onPress: () => RouteUtil.push(context, page: PdfViewPage()),
+                    ),
+                    ListItem(
+                      title: 'CustomPaint',
+                      onPress: () => RouteUtil.push(context, page: CustomPaintPage()),
+                    ),
+                    ListItem(
+                      title: 'ListViewPage',
+                      onPress: () => RouteUtil.push(context, page: ListViewPage()),
+                    ),
+                    ListItem(
+                      title: 'CallNative',
+                      onPress: () => RouteUtil.push(context, page: CallNativePage()),
+                    ),
+                    ListItem(
+                      title: 'TabBar',
+                      onPress: () => RouteUtil.push(context, page: TabBarPage()),
+                    ),
+                    ListItem(
+                      title: 'Provider',
+                      onPress: () => RouteUtil.push(context, page: ProviderPage()),
+                    ),
+                    ListItem(
+                      title: 'Paint',
+                      onPress: () => RouteUtil.push(context, page: CustomPaintPage()),
+                    ),
+                    ListItem(
+                      title: 'GestureDetector',
+                      onPress: () => RouteUtil.push(context, page: GestureDetectorPage()),
+                    ),
+                    ListItem(
+                      title: 'CustomDropDownMenu',
+                      onPress: () => RouteUtil.push(context, page: CustomDropDownMenuPage()),
+                    ),
+                    ListItem(
+                      title: 'CustomTipsPage',
+                      onPress: () => RouteUtil.push(context, page: CustomTipsPage()),
+                    ),
+                    ListItem(
+                      title: 'MultipleChoicePage',
+                      onPress: () => RouteUtil.push(context, page: MultipleChoicePage()),
+                    ),
+                    ListItem(
+                      title: 'MultipleTextFieldPage',
+                      onPress: () => RouteUtil.push(context, page: MultipleTextFieldPage()),
+                    ),
+                    ListItem(
+                      title: 'CustomRegexPage',
+                      onPress: () => RouteUtil.push(context, page: CustomRegexPage()),
+                    ),
+                    ListItem(
+                      title: 'DownloadPdfPage',
+                      onPress: () => RouteUtil.push(context, page: DownloadPdfPage()),
+                    ),
+                    ListItem(
+                      title: 'WrapWidget',
+                      onPress: () => RouteUtil.push(context, page: WrapWidgetPage()),
+                    ),
+                    ListItem(
+                      title: 'Flutter Redux',
+                      onPress: () => RouteUtil.push(context, page: ReduxPage()),
+                    ),
+                    ListItem(
+                      title: 'VoidCallback',
 //              onPress: () => RouteUtil.push(context, page: VoidCallbackPage()),
-              onPress: () => Get.to(VoidCallbackPage()),
-            ),
-            ListItem(
-              title: 'DraggableGridViewPage',
-              onPress: () =>
-                  RouteUtil.push(context, page: DraggableGridViewPage()),
-            ),
-            ListItem(
-                title: 'GetTestPage', onPress: () => Get.to(GetTestPage())),
-            ListItem(
-                title: 'DraggableScrollableSheet',
-                onPress: () => Get.to(DraggableScrollableSheetPage())),
-            ListItem(
-                title: 'HeroAnimationPage',
-                onPress: () => Get.to(HeroAnimationPage())),
-            ListItem(title: 'PaintPage', onPress: () => Get.to(PaintPage())),
-            ListItem(
-                title: 'CommonDialogPage',
-                onPress: () => Get.to(CommonDialogPage())),
-          ],
-        ),
+                      onPress: () => Get.to(VoidCallbackPage()),
+                    ),
+                    ListItem(
+                        title: 'DraggableGridViewPage',
+                        onPress: () => RouteUtil.push(context, page: DraggableGridViewPage())),
+                    ListItem(title: 'GetTestPage', onPress: () => Get.to(GetTestPage())),
+                    ListItem(title: 'DraggableScrollableSheet', onPress: () => Get.to(DraggableScrollableSheetPage())),
+                    ListItem(title: 'HeroAnimationPage', onPress: () => Get.to(HeroAnimationPage())),
+                    ListItem(title: 'PaintPage', onPress: () => Get.to(PaintPage())),
+                    ListItem(title: 'CommonDialogPage', onPress: () => Get.to(CommonDialogPage())),
+                    ListItem(title: 'CalendarPage', onPress: () => Get.to(CalendarPage())),
+                  ],
+                ),
+              )
+            : Center(
+                child: Text('未登录'),
+              );
+      }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          loginModel.login();
+        },
+        child: Icon(Icons.play_arrow),
       ),
     );
   }
@@ -225,4 +236,8 @@ class _HomePageState extends State<HomePage> {
   void dispose() {
     super.dispose();
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

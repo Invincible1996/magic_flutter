@@ -7,7 +7,6 @@
 import 'package:flutter/material.dart';
 
 class TestApp extends StatelessWidget {
-  test(String name, {int port = 8080}) {}
 
   @override
   Widget build(BuildContext context) {
